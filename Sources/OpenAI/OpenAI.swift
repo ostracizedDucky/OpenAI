@@ -194,11 +194,13 @@ extension OpenAI {
 extension OpenAI {
     
     func buildURL(path: String) -> URL {
-        var components = URLComponents()
-        components.scheme = "https"
-        components.host = configuration.host
-        components.path = path
-        return components.url!
+//        var components = URLComponents()
+//        components.scheme = "https"
+//        components.host = configuration.host
+//        components.path = path
+//        return components.url!
+        
+        return URL(string: "https://\(configuration.host)\(path)")!
     }
 }
 
